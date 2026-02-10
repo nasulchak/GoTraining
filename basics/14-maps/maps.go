@@ -65,9 +65,9 @@ func main() {
 
 	var myMap4 map[string]string
 
-	if myMap4 == nil {
-		fmt.Println("The map is initialized to nil value")
-	}
+	// if myMap4 == nil {
+	// 	fmt.Println("The map is initialized to nil value")
+	// }
 
 	val := myMap4["key"]
 	fmt.Println(val)
