@@ -15,6 +15,5 @@ func main() {
 
 	for i, v := range myMap {
 		fmt.Println(i, v)
-		// fmt.Printf("Index: %d, Rune: %c\n", i, v)
 	}
 }
