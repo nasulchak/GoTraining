@@ -1,0 +1,37 @@
+package main
+
+import "fmt"
+
+type person struct {
+	name string
+	age  int
+}
+
+type employee struct {
+	// employeeInfo person // Embedded struct Named field
+	person
+	empId  string
+	salary float64
+}
+
+func (p person) introduce() {
+	fmt.Printf("Hi, I`m %s and I`m %d years old.\n", p.name, p.age)
+}
+
+func (e employee) introduce() {
+	fmt.Printf("Hi, I`m %s, employee ID: %s, and I earn %.2f.\n", e.name, e.empId, e.salary)
+}
+
+func main() {
+	emp := employee{
+		person: person{name: "John", age: 30},
+		empId:  "E001",
+		salary: 50000,
+	}
+
+	fmt.Println("Name:", emp.name) // Accessing the emedded struct field emp.person.name
+	fmt.Println("Age:", emp.age)   // Same as above
+	fmt.Println("EmpId", emp.empId)
+	fmt.Println("Salary:", emp.salary)
+	emp.introduce()
+}
